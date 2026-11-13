@@ -1,9 +1,18 @@
 
 const MUSICAS = [
    {
-    titulo: "Superpowers",
-    arquivo: "music/superpowers.mp3"
-  }
+      titulo: "Superpowers - Daniel Caesar",
+      arquivo: "music/superpowers.mp3.aac"
+    },
+    {
+      titulo: "Just the way you are - Bruno Mars",
+      arquivo: "music/sua-musica2.mp3"
+    },
+    {
+      titulo: "Nome da Terceira Música",
+      artista: "Nome do Artista",
+      arquivo: "music/sua-musica3.mp3"
+    }
 ];
 
 const audio = document.getElementById("audio");
@@ -69,8 +78,6 @@ function montarPlaylist() {
     hint.textContent = "Adicione músicas na lista MUSICAS do script.js.";
     return;
   }
-
-  hint.textContent = "Escolha uma faixa ou use os controles.";
 
   MUSICAS.forEach((musica, i) => {
     const item = document.createElement("div");
