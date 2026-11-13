@@ -384,13 +384,6 @@ input[type="range"] {
   text-align: center;
 }
 
-.note-card p:first-of-type {
-  font-family: "Playfair Display", serif;
-  font-size: 23px;
-  line-height: 1.6;
-  color: #e8e0f1;
-}
-
 .note-star {
   color: #c7a8e8;
   font-size: 25px;
