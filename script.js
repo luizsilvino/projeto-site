@@ -2,8 +2,7 @@
 const MUSICAS = [
    {
     titulo: "Superpowers",
-    artista: "Ed Sheeran",
-    arquivo: "music/perfect.mp3"
+    arquivo: "music/superpowers.mp3"
   }
 ];
 
