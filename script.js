@@ -1,17 +1,23 @@
-
 const MUSICAS = [
-   {
+    {
       titulo: "Superpowers - Daniel Caesar",
+      descricao: "Sua música não pode faltar.",
       arquivo: "music/superpowers.mp3.aac"
     },
     {
       titulo: "Just the way you are - Bruno Mars",
-      arquivo: "music/sua-musica2.mp3"
+      descricao: "Agora a música que eu dediquei pra you.",
+      arquivo: "music/brunomars.mp3"
     },
     {
-      titulo: "Nome da Terceira Música",
-      artista: "Nome do Artista",
-      arquivo: "music/sua-musica3.mp3"
+      titulo: "Supernatural - NewJeans",
+      descricao: "NewJeans tem que ter.",
+      arquivo: "music/supernatural.mp3"
+    },
+    {
+      titulo: "Selinho - Turma do Pagode",
+      descricao: "Pagode pra lemrar de mim.",
+      arquivo: "music/selinho.mp3"
     }
 ];
 
@@ -20,6 +26,7 @@ const playBtn = document.getElementById("play");
 const progress = document.getElementById("progress");
 const titleEl = document.getElementById("track-title");
 const artistEl = document.getElementById("track-artist");
+const descEl = document.getElementById("track-description");
 const hint = document.getElementById("player-hint");
 const playlist = document.getElementById("playlist");
 
@@ -45,6 +52,10 @@ function carregar(index, tocar = false) {
   audio.src = musica.arquivo;
   titleEl.textContent = musica.titulo;
   artistEl.textContent = musica.artista || " ";
+  
+  if (descEl) {
+    descEl.textContent = musica.descricao || "";
+  }
 
   progress.value = 0;
 
@@ -85,8 +96,8 @@ function montarPlaylist() {
     item.className = "song";
 
     item.innerHTML = `
-      <span>${String(i + 1).padStart(2, "0")}　${musica.titulo}</span>
-      <small>${musica.artista || "Reproduzir"}　▶</small>
+      <span>${String(i + 1).padStart(2, "0")} ${musica.titulo}</span>
+      <small>${musica.artista || "Reproduzir"} ▶</small>
     `;
 
     item.addEventListener("click", () => carregar(i, true));
